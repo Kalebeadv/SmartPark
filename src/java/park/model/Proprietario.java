@@ -12,14 +12,20 @@ package park.model;
 public class Proprietario {
     
     //Dados do proprietário: nome, telefone, cpf e data de nascimento
-    private String id;
+    
     private String nome;
     private String telefone;
     private String cpf;
     private String data_nascimento;
 
-    public String getId() {
-        return id;
+    public Proprietario() {
+    }
+
+    public Proprietario(String nome, String telefone, String cpf, String data_nascimento) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.cpf = cpf;
+        this.data_nascimento = data_nascimento;
     }
 
     public String getNome() {
@@ -36,10 +42,6 @@ public class Proprietario {
 
     public String getData_nascimento() {
         return data_nascimento;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
     
     public void setNome(String nome) {

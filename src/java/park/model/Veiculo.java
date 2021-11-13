@@ -10,5 +10,46 @@ package park.model;
  * @author kaleb
  */
 public class Veiculo {
+  
+//Dados do veículo: placa, modelo e cor.
+    private Integer placa;
+    private Integer modelo;
+    private String cor;
+
+    public Veiculo() {
+    }
+
+    public Veiculo(Integer placa, Integer modelo, String cor) {
+        this.placa = placa;
+        this.modelo = modelo;
+        this.cor = cor;
+    }
+
+    public Integer getPlaca() {
+        return placa;
+    }
+
+    public Integer getModelo() {
+        return modelo;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setPlaca(Integer placa) {
+        this.placa = placa;
+    }
+
+    public void setModelo(Integer modelo) {
+        this.modelo = modelo;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+    
+    
+
     
 }
