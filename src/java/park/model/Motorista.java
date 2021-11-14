@@ -9,7 +9,7 @@ package park.model;
  *
  * @author kaleb
  */
-public class Motorista {
+public class Motorista implements java.io.Serializable{
     private String nome;
     private Integer telefone;
 

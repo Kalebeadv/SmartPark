@@ -9,7 +9,7 @@ package park.model;
  *
  * @author kaleb
  */
-public class Proprietario {
+public class Proprietario implements java.io.Serializable{
     
     //Dados do proprietário: nome, telefone, cpf e data de nascimento
     

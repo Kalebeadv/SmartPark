@@ -9,7 +9,7 @@ package park.model;
  *
  * @author kaleb
  */
-public class Veiculo {
+public class Veiculo implements java.io.Serializable{
   
 //Dados do veículo: placa, modelo e cor.
     private Integer placa;

@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author kaleb
  */
-public class Imovel {
+public class Imovel implements java.io.Serializable{
     
     private Endereco endereco;
     private String matricula_prefeitura;

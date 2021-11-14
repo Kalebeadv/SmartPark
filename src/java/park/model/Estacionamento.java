@@ -9,7 +9,7 @@ package park.model;
  *
  * @author kaleb
  */
-public class Estacionamento {
+public class Estacionamento implements java.io.Serializable{
     
 //Dados do estacionamento: número de vagas, código das vagas.
     private Integer codigo_vaga;
