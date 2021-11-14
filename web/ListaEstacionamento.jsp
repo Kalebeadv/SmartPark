@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:useBean id="Imo" type="park.model.Estacionamento" scope="request"/>
+<jsp:useBean id="Imovel" type="persistente.ImovelBD" scope="request"/>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +15,7 @@
     <body>
         <h1>Os estacionamentos disponiveis são:</h1>
         <hr>
-            <p>Bairro do Imovel.......: </p>
+            <p>Bairro do Imovel.......: <%bancoImovel.busca(bairro)%></p>
             <p>Registro na Prefeitura.: </p>
             <p>Tamanho do Terreno.....: </p>
             <p>Geolocalização.........: </p>

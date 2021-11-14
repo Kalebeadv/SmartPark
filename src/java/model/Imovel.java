@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package park.model;
+package model;
 
 
 /**
  *
  * @author kaleb
  */
-public class Imovel implements java.io.Serializable{
+public class Imovel{
     
     private Endereco endereco;
     private String matricula_prefeitura;
