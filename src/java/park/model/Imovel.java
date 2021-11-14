@@ -5,7 +5,6 @@
  */
 package park.model;
 
-import java.util.Date;
 
 /**
  *
@@ -17,8 +16,8 @@ public class Imovel implements java.io.Serializable{
     private String matricula_prefeitura;
     private String tamanho_area;
     private String geolocalizacao;
-    private Integer valor_aluguel;
-    private Date quando_aluga;
+    private Double valor_aluguel;
+    private String quando_aluga;
 
     public Imovel() {
     }
@@ -26,7 +25,7 @@ public class Imovel implements java.io.Serializable{
     
     public Imovel(Endereco endereco, String matricula_prefeitura, 
                   String tamanho_area, String geolocalizacao, 
-                  Integer valor_aluguel, Date quando_aluga) {
+                  Double valor_aluguel, String quando_aluga) {
         this.endereco = endereco;
         this.matricula_prefeitura = matricula_prefeitura;
         this.tamanho_area = tamanho_area;
@@ -51,11 +50,11 @@ public class Imovel implements java.io.Serializable{
         return geolocalizacao;
     }
 
-    public Integer getValor_aluguel() {
+    public Double getValor_aluguel() {
         return valor_aluguel;
     }
 
-    public Date getQuando_aluga() {
+    public String getQuando_aluga() {
         return quando_aluga;
     }
 
@@ -75,11 +74,11 @@ public class Imovel implements java.io.Serializable{
         this.geolocalizacao = geolocalizacao;
     }
 
-    public void setValor_aluguel(Integer valor_aluguel) {
+    public void setValor_aluguel(Double valor_aluguel) {
         this.valor_aluguel = valor_aluguel;
     }
 
-    public void setQuando_aluga(Date quando_aluga) {
+    public void setQuando_aluga(String quando_aluga) {
         this.quando_aluga = quando_aluga;
     }
     
