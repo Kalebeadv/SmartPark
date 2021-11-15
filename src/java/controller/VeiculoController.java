@@ -55,9 +55,8 @@ public class VeiculoController extends HttpServlet {
         Veiculo veiculo3 = new Veiculo("IPC0NF6","FERRARI","VERDE-VOMITO");
         Veiculo veiculo4 = new Veiculo("SPY0G60","MODEL3","DARK-MATTER");
         
-        ArrayList <Veiculo> veiculos = new ArrayList<>();
         VeiculoBD bdVeiculo = new VeiculoBD();
-        
+        ArrayList <Veiculo> veiculos = new ArrayList<>();
         veiculos.add(veiculo1);
         veiculos.add(veiculo2);
         veiculos.add(veiculo3);

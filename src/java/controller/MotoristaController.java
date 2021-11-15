@@ -5,7 +5,6 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import java.util.ArrayList;
@@ -43,32 +42,35 @@ public class MotoristaController extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException 
+    {
         processRequest(request, response);
         String nome = request.getParameter("nomeMotorista");
         String todos = request.getParameter("todos");
         String selecionados;
-        
-        
+ 
         Motorista motorista1 = new Motorista("Jaimes","99922853");
         Motorista motorista2 = new Motorista("Ana", "999778833");
         Motorista motorista3 = new Motorista("Willian", "8899331122");
         Motorista motorista4 = new Motorista("Spy", "99999999");
         Motorista motorista5 = new Motorista("DANIAA","<3<3<3<3<3<3");
         
+        MotoristaBD bdMotorista = new MotoristaBD();
         ArrayList <Motorista> motoristas = new ArrayList<>();
-        
         motoristas.add(motorista1);
         motoristas.add(motorista2);
         motoristas.add(motorista3);
         motoristas.add(motorista4);
         motoristas.add(motorista5);
         
-        MotoristaBD bdMotorista = new MotoristaBD();
         
-        if (todos == null){
+        
+        if (todos == null)
+        {
             selecionados = bdMotorista.buscaNome(motoristas, nome);
-        }else{
+        }
+        else
+        {
             selecionados = bdMotorista.mostrar_motoristas(motoristas);
         }
         
