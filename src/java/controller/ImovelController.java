@@ -21,8 +21,8 @@ import model.Imovel;
  *
  * @author gusta
  */
-@WebServlet(name = "MostraImovel", urlPatterns = {"/MostraImovel"})
-public class MostraImovel extends HttpServlet {
+@WebServlet(name = "ImovelController", urlPatterns = {"/ImovelController"})
+public class ImovelController extends HttpServlet {
 
    
 

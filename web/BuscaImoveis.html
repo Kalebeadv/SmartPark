@@ -11,25 +11,26 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <center>
         <div>
             <h1>Smart Parking</h1>
             <h4>Faça a busca do imovel pelo bairo</h4>
         </div>
         
-        <form name="BuscaBairro" action="MostraImovel" method="get">
+        <form name="BuscaBairro" action="ImovelController" method="get">
             <label>Digite o nome do bairro do estacionamento</label><br>
             <input type="text" name="bairro" placeholder="Digite Aqui">
             <input type="submit" value="Encontrar">
         </form>
         <h3>Os bairros disponiveis para teste são:<br> 
             Centro, Pompeu</h3>
-        <form name="BuscaRegistro" action="MostraImovel" method="get">
+        <form name="BuscaRegistro" action="ImovelController" method="get">
             <label>Digite o registro na prefeitura</label><br>
             <input type="text" name="registro" placeholder="Digite Aqui">
             <input type="submit" value="Encontrar">
         </form>
         <h3>Os registros disponiveis para teste são:
             <br> 7899877, 5465613, 5465456, 8798787877</h3>
-        
+        </center>
     </body>
 </html>
