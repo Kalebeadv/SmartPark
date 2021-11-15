@@ -13,15 +13,15 @@ and open the template in the editor.
     <body>
         <div>
             <h1>Smart Parking</h1>
-            <h4>Sistema de gerenciamento para estacionamentos</h4>
+            <h4>Faça a busca do imovel pelo bairo</h4>
         </div>
         
-        <form action="MostraEstacionamento">
+        <form name="Busca" action="MostraImovel" method="get">
             <label>Digite o nome do bairro do estacionamento</label><br>
-            <input type="text" id="bairro"/>
+            <input type="text" name="bairro" placeholder="Digite Aqui">
             <input type="submit" value="Encontrar">
         </form>
-        
+        <h3>Para testar os bairros disponiveis são:<br> Centro, Pompeu</h3>
         
     </body>
 </html>

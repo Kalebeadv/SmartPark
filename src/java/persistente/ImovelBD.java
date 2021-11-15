@@ -5,7 +5,6 @@
 package persistente;
 
 import java.util.ArrayList;
-import java.util.List;
 import model.Endereco;
 import model.Imovel;
 
@@ -15,37 +14,37 @@ import model.Imovel;
  */
 public class ImovelBD {
     
-    private static final ArrayList <Imovel> imoveis = new ArrayList<>();
-    
-    private final Endereco centro = new Endereco("6565899","Brasil",
-            "Acre","Rio Branco", "Centro","NovaVelha","569");
-    private final Endereco semCentro = new Endereco("7987985","Brasil",
-            "Acre","Bujari", "Pompeu","VelhaNova","644");
-    private final Imovel imo = new Imovel(centro, "7899877", "40x50", 
-            "-56232165564 +564654656", 5.00, "01/05/20");
-    private final Imovel imo1 = new Imovel(semCentro, "5465613", "50x20", 
-            "-565656532 -45457878787", 3.00, "12/05/21");
-    private final Imovel imo2 = new Imovel(centro,"5465456","80x10",
-            "-56232165564 +564654656", 5.00, "14/23/19");
-    private final Imovel imo3 = new Imovel(semCentro, "8798787877", 
-            "25x20", "-56232165564 +564654656", 2.50, "18/04/22");
-    
    
-    public void adicionarImovel(){
-        imoveis.add(imo);
-        imoveis.add(imo1);
-        imoveis.add(imo2);
-        imoveis.add(imo3);
-    }
     
-    public ArrayList <Imovel> busca(String bairro){
+    public ArrayList <Imovel> busca(String bairro, ArrayList <Imovel> imoveis){
         ArrayList <Imovel> guardaImoveis = new ArrayList<>();
         for(int i=0;i<imoveis.size();i++){
             Imovel cadaImovel = imoveis.get(i);
-            if (cadaImovel.getEndereco().getBairro().equals(bairro)){
+            if (cadaImovel.getEndereco().getBairro().toLowerCase().equals(bairro.toLowerCase())){
                 guardaImoveis.add(cadaImovel);
             }
-         }
-         return guardaImoveis;
-     }
+        }
+        return guardaImoveis;
+    }
+    public String exibeInfo(ArrayList <Imovel> selecionados){
+        String htmlText = "";
+        for(int i=0;i<selecionados.size();i++){
+            htmlText = htmlText + "<h4>Endereco do Imovel</h4>"
+            + "<p>CEP: " + selecionados.get(i).getEndereco().getCep() + "<br>"
+            + "Pais: "+selecionados.get(i).getEndereco().getPais() +"<br>"
+            + "Estado: "+selecionados.get(i).getEndereco().getEstado()+"<br>"
+            + "Cidade: "+selecionados.get(i).getEndereco().getCidade()+"<br>"
+            + "Bairro: "+selecionados.get(i).getEndereco().getBairro()+"<br>"
+            + "Rua: "+selecionados.get(i).getEndereco().getCidade()+"</p>"
+            + "<h4>Informaçoes do Imovel</h4>"
+            + "<p>Matricula da Prefeitura: "+ selecionados.get(i).getMatricula_prefeitura()+"<br>"
+            + "Tamanho do Terreno: "+ selecionados.get(i).getTamanho_area()+"<br>"
+            + "Geolocalização: "+ selecionados.get(i).getGeolocalizacao() + "<br>"
+            + "Valor do aluguel: "+ selecionados.get(i).getValor_aluguel().toString()+ "<br>"
+            + "Data que foi alugado: "+selecionados.get(i).getQuando_aluga() + "</p><br>"
+            + "<hr size='1'>";
+        }
+        return htmlText;
+    }
+    
 }
