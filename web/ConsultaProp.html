@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Consulta Proprietarios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h4>faça a busca pelos proprietarios</h4>
+        <div>
+            <form name="ConsultaProp" action="ProprietarioController" method="get">
+                <label>Digite o cpf do proprietario</label><br>
+                <input type="text" name="cpf" placeholder="Digite Aqui">
+                <input type="submit" value="Encontrar"><br>
+                <input type = "checkbox" name="todos" value="true">
+                <label>Quero pesquisar por todos</label>
+            </form>
+            <h3>Cpfs disponiveis para teste<br>
+            78812312, 12321223, 9933999, 88766677</h3>
+        </div>
+    </body>
+</html>

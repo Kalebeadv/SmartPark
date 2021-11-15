@@ -43,7 +43,7 @@ public class ImovelController extends HttpServlet {
         String bairro = request.getParameter("bairro");
         String registro = request.getParameter("registro");
         
-        // isso não existiria se fizessimos um banco de dados
+        // isso não existiria se tivessimos um banco de dados
         ArrayList <Imovel> imoveis = new ArrayList<>();
         
         Endereco centro = new Endereco("6565899","Brasil",

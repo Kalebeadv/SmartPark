@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ListaEstacionamento
-    Created on : 13 de nov de 2021, 19:27:53
+    Document   : Vagas
+    Created on : 14 de nov de 2021, 23:47:50
     Author     : gusta
 --%>
 
@@ -10,10 +10,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Lista de Imoveis</title>
+        <title>Vagas Disponiveis</title>
     </head>
     <body>
-        <h1>Os estacionamentos disponiveis são:</h1>
         ${Texto}
     </body>
 </html>

@@ -16,35 +16,31 @@ public class ProprietarioBD {
     //Dados do proprietário: nome, telefone, cpf e data de nascimento.
     private String html_do_proprietario;
     
-    private final  ArrayList<Proprietario> proprietarios = 
-                                            new ArrayList<Proprietario>();
     
-    Proprietario proprietario1 = new Proprietario("José","999887643","78812312",
-                                                   "20/12/1980");
-    Proprietario proprietario2 = new Proprietario("Armando","8877433","12321223"
-                                                 ,"13/03/1973");
-    Proprietario proprietario3 = new Proprietario("Horlando","999765472",
-                                                  "9933999","04/05/1990");
-    Proprietario proprietario4 = new Proprietario("Carla","88776655","88766677"
-                                                 ,"03/07/1960");
-    
-    public void adicionar_proprietarios()
-    {
-        proprietarios.add(proprietario1);
-        proprietarios.add(proprietario2);
-        proprietarios.add(proprietario3);
-        proprietarios.add(proprietario4);
+    public String proprietario_escolhido(ArrayList <Proprietario> proprietarios,String cpf){
+        html_do_proprietario = "";
+        for (int i=0; i<proprietarios.size();i++){
+            if (proprietarios.get(i).getCpf().equals(cpf)){
+                html_do_proprietario = 
+                "<p>Nome do proprietario: " + proprietarios.get(i).getNome() + "<br>"
+              + "Telefone do proprietario: " + proprietarios.get(i).getTelefone() + "<br>"
+              + "CPF do proprietario: " + proprietarios.get(i).getCpf() + "<br>"
+              + "Data de nascimento do proprietario: " + proprietarios.get(i).getData_nascimento() + "</p>";
+            return html_do_proprietario;
+            }
+        }
+        return html_do_proprietario;
     }
     
-    public String mostrar_proprietarioss()
+    public String mostrar_proprietarioss(ArrayList <Proprietario> proprietarios)
     {
+        html_do_proprietario = "";
         proprietarios.forEach(proprietario -> {
-           html_do_proprietario = 
-                "<p>Nome do proprietario: </p>" + proprietario.getNome() +
-                "<p>Telefone do proprietario: </p>" + proprietario.getTelefone()
-              + "<p>CPF do proprietario: </p>" + proprietario.getCpf() +
-                "<p>Data de nascimento do proprietario: </p>" +         
-                                              proprietario.getData_nascimento();
+           html_do_proprietario += 
+                "<p>Nome do proprietario: " + proprietario.getNome() + "<br>"
+              + "Telefone do proprietario: " + proprietario.getTelefone() + "<br>"
+              + "CPF do proprietario: " + proprietario.getCpf() + "<br>"
+              + "Data de nascimento do proprietario: " + proprietario.getData_nascimento() + "</p>";
         });
         
         return html_do_proprietario;
