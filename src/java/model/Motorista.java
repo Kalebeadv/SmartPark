@@ -11,13 +11,13 @@ package model;
  */
 public class Motorista implements java.io.Serializable{
     private String nome;
-    private Integer telefone;
+    private String telefone;
 
     public Motorista() {
     }
 
     
-    public Motorista(String nome, Integer telefone) {
+    public Motorista(String nome, String telefone) {
         this.nome = nome;
         this.telefone = telefone;
     }
@@ -26,7 +26,7 @@ public class Motorista implements java.io.Serializable{
         return nome;
     }
 
-    public Integer getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
@@ -34,7 +34,7 @@ public class Motorista implements java.io.Serializable{
         this.nome = nome;
     }
 
-    public void setTelefone(Integer telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
     
