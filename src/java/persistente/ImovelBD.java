@@ -16,7 +16,7 @@ public class ImovelBD {
     
    
     
-    public ArrayList <Imovel> busca(String bairro, ArrayList <Imovel> imoveis){
+    public ArrayList <Imovel> buscaBairro(String bairro, ArrayList <Imovel> imoveis){
         ArrayList <Imovel> guardaImoveis = new ArrayList<>();
         for(int i=0;i<imoveis.size();i++){
             Imovel cadaImovel = imoveis.get(i);
@@ -26,6 +26,17 @@ public class ImovelBD {
         }
         return guardaImoveis;
     }
+    public ArrayList <Imovel> buscaRegistro(String registro, ArrayList <Imovel> imoveis){
+        ArrayList <Imovel> guardaImoveis = new ArrayList<>();
+        for(int i=0;i<imoveis.size();i++){
+            Imovel cadaImovel = imoveis.get(i);
+            if (cadaImovel.getMatricula_prefeitura().equals(registro)){
+                guardaImoveis.add(cadaImovel);
+            }
+        }
+        return guardaImoveis;
+    }
+    
     public String exibeInfo(ArrayList <Imovel> selecionados){
         String htmlText = "";
         for(int i=0;i<selecionados.size();i++){
@@ -35,7 +46,7 @@ public class ImovelBD {
             + "Estado: "+selecionados.get(i).getEndereco().getEstado()+"<br>"
             + "Cidade: "+selecionados.get(i).getEndereco().getCidade()+"<br>"
             + "Bairro: "+selecionados.get(i).getEndereco().getBairro()+"<br>"
-            + "Rua: "+selecionados.get(i).getEndereco().getCidade()+"</p>"
+            + "Rua: "+selecionados.get(i).getEndereco().getRua()+"</p>"
             + "<h4>Informaçoes do Imovel</h4>"
             + "<p>Matricula da Prefeitura: "+ selecionados.get(i).getMatricula_prefeitura()+"<br>"
             + "Tamanho do Terreno: "+ selecionados.get(i).getTamanho_area()+"<br>"

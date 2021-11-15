@@ -41,6 +41,9 @@ public class MostraImovel extends HttpServlet {
         
         String selecionados;
         String bairro = request.getParameter("bairro");
+        String registro = request.getParameter("registro");
+        
+        // isso não existiria se fizessimos um banco de dados
         ArrayList <Imovel> imoveis = new ArrayList<>();
         
         Endereco centro = new Endereco("6565899","Brasil",
@@ -48,13 +51,13 @@ public class MostraImovel extends HttpServlet {
         Endereco semCentro = new Endereco("7987985","Brasil",
             "Acre","Bujari", "Pompeu","VelhaNova","644");
         Imovel imo = new Imovel(centro, "7899877", "40x50", 
-            "-56232165564 +564654656", 5.00, "01/05/20");
+            "-56232165564 +564654656", 3000.00, "01/05/20");
         Imovel imo1 = new Imovel(semCentro, "5465613", "50x20", 
-            "-565656532 -45457878787", 3.00, "12/05/21");
+            "-565656532 -45457878787", 1500.00, "12/05/21");
         Imovel imo2 = new Imovel(centro,"5465456","80x10",
-            "-56232165564 +564654656", 5.00, "14/23/19");
+            "-56232165564 +564654656", 2333.00, "14/23/19");
         Imovel imo3 = new Imovel(semCentro, "8798787877", 
-            "25x20", "-56232165564 +564654656", 3.00, "18/04/22");
+            "25x20", "-56232165564 +564654656", 1883.00, "18/04/22");
         
         imoveis.add(imo);
         imoveis.add(imo1);
@@ -64,10 +67,11 @@ public class MostraImovel extends HttpServlet {
         
         ImovelBD bancoImovel = new ImovelBD();
         
-        
-        
-        selecionados = bancoImovel.exibeInfo(bancoImovel.busca(bairro,imoveis));
-        
+        if (bairro == null){
+            selecionados = bancoImovel.exibeInfo(bancoImovel.buscaRegistro(registro,imoveis));
+        }else{
+            selecionados = bancoImovel.exibeInfo(bancoImovel.buscaBairro(bairro,imoveis));
+        }
         
         request.setAttribute("Texto", selecionados);
         RequestDispatcher dispatcher;
