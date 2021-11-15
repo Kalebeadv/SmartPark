@@ -12,24 +12,24 @@ package model;
 public class Veiculo implements java.io.Serializable{
   
 //Dados do veículo: placa, modelo e cor.
-    private Integer placa;
-    private Integer modelo;
+    private String placa;
+    private String modelo;
     private String cor;
 
     public Veiculo() {
     }
 
-    public Veiculo(Integer placa, Integer modelo, String cor) {
+    public Veiculo(String placa, String modelo, String cor) {
         this.placa = placa;
         this.modelo = modelo;
         this.cor = cor;
     }
 
-    public Integer getPlaca() {
+    public String getPlaca() {
         return placa;
     }
 
-    public Integer getModelo() {
+    public String getModelo() {
         return modelo;
     }
 
@@ -37,11 +37,11 @@ public class Veiculo implements java.io.Serializable{
         return cor;
     }
 
-    public void setPlaca(Integer placa) {
+    public void setPlaca(String placa) {
         this.placa = placa;
     }
 
-    public void setModelo(Integer modelo) {
+    public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 

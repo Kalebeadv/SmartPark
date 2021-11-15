@@ -7,6 +7,9 @@ package controller;
 import java.io.IOException;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
+import java.util.ArrayList;
+import model.Veiculo;
+import persistente.VeiculoBD;
 
 /**
  *
@@ -40,8 +43,49 @@ public class VeiculoController extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+            throws ServletException, IOException 
+    {
+        String placa_veiculo = request.getParameter("placa_veiculo");
+        String modelo_veiculo = request.getParameter("modelo_veiculo");
+        String get_todos_os_veiculos = request.getParameter("todos");
+        String receber_dados_do_veiculo;
+        
+        Veiculo veiculo1 = new Veiculo("KAL3B37","ONIX","PRETO-ESCURO-ESCURO");
+        Veiculo veiculo2 = new Veiculo("BLZ1KB1","GOL","VERDE");
+        Veiculo veiculo3 = new Veiculo("IPC0NF6","FERRARI","VERDE-VOMITO");
+        Veiculo veiculo4 = new Veiculo("SPY0G60","MODEL3","DARK-MATTER");
+        
+        ArrayList <Veiculo> veiculos = new ArrayList<>();
+        VeiculoBD bdVeiculo = new VeiculoBD();
+        
+        veiculos.add(veiculo1);
+        veiculos.add(veiculo2);
+        veiculos.add(veiculo3);
+        veiculos.add(veiculo4);
+        
+        if(get_todos_os_veiculos == null)
+        {
+            if(placa_veiculo == null)
+            {
+                receber_dados_do_veiculo = 
+                        bdVeiculo.consultar_por_modelo(veiculos,modelo_veiculo);
+            }
+            else
+                receber_dados_do_veiculo = 
+                          bdVeiculo.consultar_por_placa(veiculos,placa_veiculo);
+        }
+        else
+        {
+            receber_dados_do_veiculo = 
+                                   bdVeiculo.mostrar_todos_os_veiculos(veiculos);
+        }
+        
+        request.setAttribute("Texto", receber_dados_do_veiculo);
+        RequestDispatcher dispatcher;
+        dispatcher = getServletContext().getRequestDispatcher("/MostraProprietarios.jsp");
+        dispatcher.forward(request, response);
+        
+        
     }
 
 }

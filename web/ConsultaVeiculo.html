@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Consulta veiculo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <form name="consulta_de_veiculos" action="VeiculoController">
+                <label for="placa">Consultar pela placa</label>
+                <input type="text" name="placa_veiculo" id="placa">   
+                <input type="submit" value="consultar">
+            </form>
+        </div>
+        <div>
+            <form name="consulta_modelo" action="VeiculoController">
+                <br>
+                <label for="modelo">Consultar pelo modelo</label>
+                <input type="text" name="modelo_veiculo" id="modelo">   
+                <input type="submit" value="consultar">
+            </form>
+        </div>
+        <div>
+            <form name="todos_os_veiculos" action="VeiculoController">
+                <br>
+                <input type="checkbox" name = "todos" value = "true">
+                <label>Consultar todos os veiculos</label>
+                <input type="submit" value="consultar">
+            </form>
+        </div>
+        
+    </body>
+</html>
