@@ -10,14 +10,14 @@ import model.Proprietario;
 
 /**
  *
- * @author gusta
+ * @author kaleb
  */
 public class ProprietarioBD {
     //Dados do proprietário: nome, telefone, cpf e data de nascimento.
     private String html_do_proprietario;
     
-    
-    public String proprietario_escolhido(ArrayList <Proprietario> proprietarios,String cpf){
+    public String proprietario_escolhido(ArrayList <Proprietario> proprietarios,String cpf)
+    {
         html_do_proprietario = "";
         for (int i=0; i<proprietarios.size();i++){
             if (proprietarios.get(i).getCpf().equals(cpf)){

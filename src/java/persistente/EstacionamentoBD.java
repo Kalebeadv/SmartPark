@@ -11,28 +11,25 @@ import model.Estacionamento;
  
 /**
  *
- * @author gusta
+ * @author kaleb
  */
 public class EstacionamentoBD{
-        private String texto_html_dos_estacionamentos = "";
-        private double valor_inicial = 0;
-        private double valor_da_taxa_por_hora = 0;
-        private Double contador_do_valor_arrecadado_no_dia = 0.00;
-       
-        
-        public String mostrar_estacionamentos(ArrayList <Estacionamento> estacionamentos)
-        {
-            
+    private String texto_html_dos_estacionamentos = "";
+    private double valor_inicial = 0;
+    private double valor_da_taxa_por_hora = 0;
+    private Double contador_do_valor_arrecadado_no_dia = 0.00;
+           
+    public String mostrar_estacionamentos(ArrayList 
+                                               <Estacionamento> estacionamentos)
+        { 
             for (int i = 0; i < estacionamentos.size(); i++)
             {
-                texto_html_dos_estacionamentos +=
-                        
+                texto_html_dos_estacionamentos +=         
                 "<p>Codígo da vaga: " + estacionamentos.get(i)
-                                           .getCodigo_vaga().toString()+ "<br>" +
-                "Número da vaga: " + estacionamentos.get(i).
-                                            getNumero_vaga().toString() + "</p>";
+                                           .getCodigo_vaga().toString()+ "<br>"  
+               + "Número da vaga: " + estacionamentos.get(i).
+                                            getNumero_vaga().toString()+"</p>";
             }
-            
             return texto_html_dos_estacionamentos;
         }
         

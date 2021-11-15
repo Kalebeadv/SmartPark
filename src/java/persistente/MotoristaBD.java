@@ -9,7 +9,7 @@ import model.Motorista;
 
 /**
  *
- * @author gusta
+ * @author kaleb
  */
 public class MotoristaBD {
     //nome

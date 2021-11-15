@@ -5,7 +5,6 @@
 package persistente;
 
 import java.util.ArrayList;
-import model.Endereco;
 import model.Imovel;
 
 /**
