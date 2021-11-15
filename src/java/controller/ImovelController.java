@@ -42,6 +42,7 @@ public class ImovelController extends HttpServlet {
         String selecionados;
         String bairro = request.getParameter("bairro");
         String registro = request.getParameter("registro");
+        String todos = request.getParameter("todos");
         
         // isso não existiria se tivessimos um banco de dados
         ArrayList <Imovel> imoveis = new ArrayList<>();
@@ -67,12 +68,16 @@ public class ImovelController extends HttpServlet {
         
         ImovelBD bancoImovel = new ImovelBD();
         
-        if (bairro == null){
-            selecionados = bancoImovel.exibeInfo(bancoImovel.buscaRegistro(registro,imoveis));
+        if (todos == null){
+            if(registro == null){
+                selecionados = bancoImovel.exibeInfo(bancoImovel.buscaBairro(bairro,imoveis));
+            }else{
+                selecionados = bancoImovel.exibeInfo(bancoImovel.buscaRegistro(registro,imoveis));
+            }
         }else{
-            selecionados = bancoImovel.exibeInfo(bancoImovel.buscaBairro(bairro,imoveis));
+            selecionados = bancoImovel.exibeInfo(imoveis);  
         }
-        
+   
         request.setAttribute("Texto", selecionados);
         RequestDispatcher dispatcher;
         dispatcher = getServletContext().getRequestDispatcher("/ListaImovel.jsp");

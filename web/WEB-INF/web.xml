@@ -12,6 +12,10 @@
         <servlet-name>ProprietarioController</servlet-name>
         <servlet-class>controller.ProprietarioController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MotoristaController</servlet-name>
+        <servlet-class>controller.MotoristaController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>estacionamentoController</servlet-name>
         <url-pattern>/estacionamentoController</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>ProprietarioController</servlet-name>
         <url-pattern>/ProprietarioController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MotoristaController</servlet-name>
+        <url-pattern>/MotoristaController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -5,13 +5,14 @@
         <group>
             <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SmartPark/web/index.html</file>
             <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SmartPark/web/MostraVagas.jsp</file>
-            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SmartPark/src/java/persistente/EstacionamentoBD.java</file>
+            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SmartPark/src/java/persistente/ProprietarioBD.java</file>
+            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SmartPark/web/ConsultaProp.html</file>
             <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SmartPark/web/BuscaImoveis.html</file>
-            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SmartPark/src/java/persistente/ImovelBD.java</file>
+            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SmartPark/src/java/controller/ProprietarioController.java</file>
+            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SmartPark/web/MostraProprietarios.jsp</file>
             <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SmartPark/src/java/controller/ImovelController.java</file>
-            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SmartPark/src/java/model/Estacionamento.java</file>
-            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SmartPark/src/java/controller/estacionamentoController.java</file>
             <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SmartPark/web/ListaImovel.jsp</file>
+            <file>file:/C:/Users/gusta/Documents/NetBeansProjects/SmartPark/src/java/model/Proprietario.java</file>
         </group>
     </open-files>
 </project-private>

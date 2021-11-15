@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Consulta Motorista</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>SmartParking</h1>
+            <h4>Consulta de Motorista</h4>
+            <p>Consultar pelo nome</p>
+            <form action="MotoristaController" method="get">
+                <label for="m">Digite o nome do motorista</label><br>
+                <input type="text" name="nomeMotorista" id="m" placeholder="Digite aqui"><br>
+                <input type="checkbox" name="todos" value="true">
+                <label>Pesquisar por todos os motoristas</label><br>
+                <input type="submit" value="Pesquisar">
+            </form>
+        </div>
+    </body>
+</html>
