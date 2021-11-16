@@ -80,7 +80,7 @@ public class ImovelController extends HttpServlet {
    
         request.setAttribute("Texto", selecionados);
         RequestDispatcher dispatcher;
-        dispatcher = getServletContext().getRequestDispatcher("/ListaImovel.jsp");
+        dispatcher = getServletContext().getRequestDispatcher("/MostraImovel.jsp");
         dispatcher.forward(request, response);
     }
 }

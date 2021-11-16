@@ -40,7 +40,8 @@ public class ProprietarioBD {
                 "<p>Nome do proprietario: " + proprietario.getNome() + "<br>"
               + "Telefone do proprietario: " + proprietario.getTelefone() + "<br>"
               + "CPF do proprietario: " + proprietario.getCpf() + "<br>"
-              + "Data de nascimento do proprietario: " + proprietario.getData_nascimento() + "</p>";
+              + "Data de nascimento do proprietario: " + proprietario.getData_nascimento() + "</p>"
+              + "<hr size='1'>";
         });
         
         return html_do_proprietario;

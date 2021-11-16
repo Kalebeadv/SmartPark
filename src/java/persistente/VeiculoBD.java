@@ -51,7 +51,7 @@ public class VeiculoBD {
 
     public String devolver_veiculo(int index, ArrayList<Veiculo> veiculo) {
         return html_do_veiculo
-                += "<p>Placa do veiculo: " + veiculo.get(index).getPlaca()
+                = "<p>Placa do veiculo: " + veiculo.get(index).getPlaca()
                 + "<br>Modelo do veiculo: " + veiculo.get(index).getModelo()
                 + "<br>Cor do veiculo: " + veiculo.get(index).getCor() + "</p>";
 

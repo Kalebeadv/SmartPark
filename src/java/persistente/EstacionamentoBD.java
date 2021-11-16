@@ -79,10 +79,10 @@ public class EstacionamentoBD {
                                                 <Estacionamento> estacionamento)
     {
         return texto_html_dos_estacionamentos
-                += "<p>Codígo da vaga: " + estacionamento.get(index)
+                = "<p>Codígo da vaga: " + estacionamento.get(index)
                             .getCodigo_vaga().toString() + "<br>"
                     + "Número da vaga: " + estacionamento.get(index).
-                            getNumero_vaga().toString() + "</p><br><hr>";      
+                            getNumero_vaga().toString() + "</p>";      
     }
     
   
@@ -91,7 +91,7 @@ public class EstacionamentoBD {
     }
     public String pagar_por_retirada(Double ticket)
     {
-        String texto = ticket.toString();
+        String texto = "valor a pagar: " + ticket.toString() + "<hr>";
         return texto;
     }
 

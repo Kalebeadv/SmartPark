@@ -51,6 +51,7 @@ public class EstacionamentoController extends HttpServlet {
             throws ServletException, IOException 
     {
         //Como não temos banco de dados, infelizmente tivemos que duplicar codigo
+        //Os dados devem se retirados do banco de dados usando as Classes de permanencia. 
         String  texto = "";
         
         Estacionamento vaga1_centro = new Estacionamento(1,1);
@@ -64,8 +65,6 @@ public class EstacionamentoController extends HttpServlet {
         estacionamentos.add(vaga4_nao_centro);
         estacionamentos.add(vaga5_12_horas);
         estacionamentos.add(vaga6_cortesia);
-        
-        
         
         MotoristaBD bdMotorista = new MotoristaBD();
         ArrayList <Motorista> motoristas = new ArrayList<>();
@@ -92,15 +91,46 @@ public class EstacionamentoController extends HttpServlet {
         veiculos.add(veiculo4);
         
         String busca_por_nome = request.getParameter("busca_por_nome");
-        Double valor_do_tickt = bdEstacionamento._12_horas_especiais_tickets();
-        for(int i = 0; i < estacionamentos.size(); i++)
-        {
-            texto += bdMotorista.devolver_motoristas(i, motoristas);
-            texto += bdVeiculo.devolver_veiculo(i, veiculos);
-            texto += bdEstacionamento.devolver_estacionamento(i, estacionamentos);
-            texto += bdEstacionamento.pagar_por_retirada(valor_do_tickt);
-                   
+        String todos = request.getParameter("todos");
+        
+        Double valor_tickt_12h = bdEstacionamento._12_horas_especiais_tickets();
+        Double valor_tickt_cortesia = bdEstacionamento.cortesia_tickets();
+        Double valor_tickt_normal = bdEstacionamento
+                .preco_tickt_qualquer_outro_local_estacionado(3.00);
+        Double valor_tickt_centro = bdEstacionamento
+                .preco_ticket_centro_tempo_estacionado(5.00);
+        
+        ArrayList <Double> tickts = new ArrayList<>();
+        tickts.add(valor_tickt_12h);
+        tickts.add(valor_tickt_centro);
+        tickts.add(valor_tickt_cortesia);
+        tickts.add(valor_tickt_normal);
+        
+        
+        if(todos == null){
+            for(int i = 0; i < estacionamentos.size(); i++)
+            {
+                if (motoristas.get(i).getNome().equals(busca_por_nome))
+                {
+                    texto += bdMotorista.devolver_motoristas(i, motoristas)
+                + bdVeiculo.devolver_veiculo(i, veiculos)
+                + bdEstacionamento.devolver_estacionamento(i, estacionamentos)
+                + bdEstacionamento.pagar_por_retirada(tickts.get(i));
+                    break;
+                }
+            }
+        }else{
+            for(int i = 0; i < estacionamentos.size(); i++)
+            {
+            texto += bdMotorista.devolver_motoristas(i, motoristas)
+            + bdVeiculo.devolver_veiculo(i, veiculos)
+            + bdEstacionamento.devolver_estacionamento(i, estacionamentos)
+            + bdEstacionamento.pagar_por_retirada(tickts.get(i));
+            }
         }
+        
+        
+        
         
         request.setAttribute("Texto", texto);
         RequestDispatcher dispatcher;

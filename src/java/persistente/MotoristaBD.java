@@ -52,7 +52,7 @@ public class MotoristaBD {
     
     public String devolver_motoristas(int index, ArrayList <Motorista> motorista)
     {
-        return  html_do_motorista = html_do_motorista +
+        return  html_do_motorista =
                 "<p>Nome do motorista: " + motorista.get(index).getNome() +
                 "<br>Telefone do motorista: " + motorista.get(index).
                                                                 getTelefone() +
